@@ -1,4 +1,6 @@
 package dev.ng.javabooking_system.service;
 
-public interface ServiceRepository {
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface ServiceRepository extends JpaRepository<Service, Long> {
 }

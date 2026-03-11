@@ -1,4 +1,7 @@
 package dev.ng.javabooking_system.team;
 
-public interface TeamRepository {
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface TeamRepository extends JpaRepository<Team, Long> {
 }
+
