@@ -1,7 +1,6 @@
 package dev.ng.javabooking_system.appointment;
 
 import dev.ng.javabooking_system.service.Service;
-import dev.ng.javabooking_system.user.User;
 import jakarta.persistence.*;
 import lombok.Data;
 
@@ -19,12 +18,14 @@ public class Appointment {
 
     private LocalDateTime endDate;
 
+    private String fullName;
+
+    private String email;
+
+    private String phoneNumber;
+
     @Enumerated(EnumType.STRING)
     private StatusEnum status;
-
-    @OneToOne
-    @JoinColumn(name = "user_id")
-    private User user;
 
     @OneToOne
     @JoinColumn(name = "service_id")
