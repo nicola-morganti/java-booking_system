@@ -17,6 +17,10 @@ public class TeamService {
     }
 
     public Team createTeam(Team team) {
+        if (teamRepository.existsByName(team.getName())) {
+            throw new RuntimeException("A team member with the name '" + team.getName() + "' already exists.");
+        }
+
         return teamRepository.save(team);
     }
 }
