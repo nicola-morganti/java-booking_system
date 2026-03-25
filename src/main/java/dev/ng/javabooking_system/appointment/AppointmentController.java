@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/appointments")
+@RequestMapping("/appointment")
 public class AppointmentController {
 
     private final AppointmentService appointmentService;
@@ -15,12 +15,12 @@ public class AppointmentController {
         this.appointmentService = appointmentService;
     }
 
-    @PostMapping("/appointment")
+    @PostMapping
     public Appointment createAppointment(@Valid @RequestBody Appointment appointment) {
         return appointmentService.createAppointment(appointment);
     }
 
-    @GetMapping("/appointment")
+    @GetMapping
     public List<Appointment> getAllAppointments() {
         return appointmentService.getAllAppointments();
     }
